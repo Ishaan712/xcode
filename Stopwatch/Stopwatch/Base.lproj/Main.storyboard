@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stopwatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nh9-Nc-rKh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Stopwatch" id="v4s-gH-8aG">
+                                        <barButtonItem key="leftBarButtonItem" title="Pause" id="cdR-qO-jtH">
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="pause:" destination="BYZ-38-t0r" id="pLd-pX-w6m"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vie-PQ-cqo">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Stop" id="y3O-Hc-vlv">
+                                        <color key="tintColor" red="0.8980392157" green="0.032550091650000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="stop:" destination="BYZ-38-t0r" id="ARG-bM-eFj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dkb-Oo-s7J"/>
+                                    <barButtonItem title="Play" id="ndf-hu-tob">
+                                        <color key="tintColor" red="0.0" green="0.89803921568627454" blue="0.14814406256274357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" id="jg3-Ts-cso"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mp-Jx-Y8w">
+                                <rect key="frame" x="20" y="327" width="374" height="242"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="242" id="7fP-4k-B85"/>
+                                    <constraint firstAttribute="width" constant="374" id="HTx-gR-Eas"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="93"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vie-PQ-cqo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="232-FV-fql"/>
+                            <constraint firstItem="Vie-PQ-cqo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Rd-h1-yQ4"/>
+                            <constraint firstItem="Nh9-Nc-rKh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="95R-JB-NBD"/>
+                            <constraint firstItem="0Mp-Jx-Y8w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EBD-Zh-vSf"/>
+                            <constraint firstItem="Vie-PQ-cqo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TSG-8K-9eW"/>
+                            <constraint firstItem="0Mp-Jx-Y8w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="URT-Vh-EUU"/>
+                            <constraint firstItem="Nh9-Nc-rKh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hh6-FO-d6o"/>
+                            <constraint firstItem="Nh9-Nc-rKh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="x2h-bu-xLc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentTime" destination="0Mp-Jx-Y8w" id="eie-Fk-0bH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68.115942028985515" y="112.5"/>
+        </scene>
+    </scenes>
+</document>
