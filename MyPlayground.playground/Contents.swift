@@ -79,12 +79,67 @@ var randomNumber = arc4random_uniform(6) //between 0 and 5
 
 
 
+// For Loops
+for i in 1...10{
+    print(i)
+}
+
+for i in stride(from: 30, through: 8, by: -2){
+    print(i)
+}
+
+var someArr =  [6, 3, 8, 1]
+for item in someArr {
+    print(item)
+}
+for (index, x) in someArr.enumerated(){
+    print(index)
+}
+print(" ")
+for i in 0..<someArr.count{
+    someArr[i] += 1
+}
+print(someArr)
 
 
 
+//While Loops
+var i = 1
+while i < 5 {
+    print(i)
+    i+=1
+}
+
+var j = 2
+while j < 20{
+    print(j)
+    j = j+2
+}
+
+var arrs = [6, 2, 9, 1]
+var index = 0
+while index < arrs.count{
+    print(arrs[index])
+    index += 1
+}
 
 
 
+// Prime Numbers
+var number = 2
+var isPrime = true
+
+if number == 1{
+    isPrime = false
+}
+if number != 2 && number != 1 {
+    for i in 2..<number {
+        if number % i == 0 {
+            isPrime = false
+        }
+    }
+}
+print(isPrime)
 
 
 
