@@ -14,9 +14,37 @@ class ViewController: UIViewController {
     
     var counter = 1
     
+    var timer = Timer() // create timer object
+    
+    var isAnimating = true
+    
     @IBAction func updateImage(_ sender: Any) {
         
-        pandaImage.image = UIImage(named: "frame\(counter).png")
+        if isAnimating == true {
+            
+            timer.invalidate()
+            
+            isAnimating = false
+            
+        } else {
+            
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(doAnimation), userInfo: nil, repeats: true)
+            
+            isAnimating = true
+        }
+        
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(doAnimation), userInfo: nil, repeats: true) // set timer to call the function to animate
+    }
+    
+    @objc func doAnimation(){
+        
+        pandaImage.image = UIImage(named: "frame\(counter).png") // change frame
         
         counter += 1
         
@@ -26,11 +54,6 @@ class ViewController: UIViewController {
             
         }
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     /*override func viewDidLayoutSubviews() {

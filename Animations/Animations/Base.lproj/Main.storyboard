@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgg-6E-1OZ">
-                                <rect key="frame" x="142" y="639" width="134" height="39"/>
+                                <rect key="frame" x="160" y="639" width="98" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Update Image"/>
+                                <state key="normal" title="Start/Stop"/>
                                 <connections>
                                     <action selector="updateImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YXv-jn-VcA"/>
                                 </connections>
