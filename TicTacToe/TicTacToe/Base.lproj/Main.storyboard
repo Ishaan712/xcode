@@ -14,11 +14,11 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" tag="102" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board.png" translatesAutoresizingMaskIntoConstraints="NO" id="jiQ-YZ-Mjh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board.png" translatesAutoresizingMaskIntoConstraints="NO" id="jiQ-YZ-Mjh">
                                 <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="1ss-vH-tZL"/>
@@ -31,7 +31,6 @@
                                     <constraint firstAttribute="height" constant="129" id="7Qz-q5-2y2"/>
                                     <constraint firstAttribute="width" constant="129" id="xdw-hC-TC7"/>
                                 </constraints>
-                                <state key="normal" image="circle.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1nt-kz-21w"/>
                                 </connections>
@@ -44,7 +43,6 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="129" id="XbJ-mC-CAN"/>
                                     <constraint firstAttribute="height" constant="129" id="xbR-N9-jeA"/>
                                 </constraints>
-                                <state key="normal" image="circle.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GhS-Hp-a5O"/>
                                 </connections>
@@ -57,7 +55,6 @@
                                     <constraint firstAttribute="width" constant="129" id="dPP-3K-6TP"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="129" id="ezH-Cm-YoM"/>
                                 </constraints>
-                                <state key="normal" image="circle.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQZ-P4-Adv"/>
                                 </connections>
@@ -68,7 +65,6 @@
                                     <constraint firstAttribute="height" constant="129" id="9uI-Nb-qAq"/>
                                     <constraint firstAttribute="width" constant="129" id="dcJ-Ob-Qre"/>
                                 </constraints>
-                                <state key="normal" image="circle.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sR8-7m-hfG"/>
                                 </connections>
@@ -79,7 +75,6 @@
                                     <constraint firstAttribute="width" constant="129" id="NIG-zl-jeH"/>
                                     <constraint firstAttribute="height" constant="129" id="pOw-fd-RKU"/>
                                 </constraints>
-                                <state key="normal" image="circle.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GhE-aT-xzw"/>
                                 </connections>
@@ -90,7 +85,6 @@
                                     <constraint firstAttribute="width" constant="129" id="2uI-RF-XXe"/>
                                     <constraint firstAttribute="height" constant="129" id="k3t-bd-7pe"/>
                                 </constraints>
-                                <state key="normal" image="circle.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ho-Bi-zaZ"/>
                                 </connections>
@@ -101,7 +95,6 @@
                                     <constraint firstAttribute="width" constant="129" id="INS-9W-m5P"/>
                                     <constraint firstAttribute="height" constant="129" id="UtS-rP-N3w"/>
                                 </constraints>
-                                <state key="normal" image="circle.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7iH-iN-N0d"/>
                                 </connections>
@@ -112,7 +105,6 @@
                                     <constraint firstAttribute="height" constant="129" id="D71-x0-D8k"/>
                                     <constraint firstAttribute="width" constant="129" id="mt4-IQ-7ah"/>
                                 </constraints>
-                                <state key="normal" image="circle.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TIT-7g-eeR"/>
                                 </connections>
@@ -123,9 +115,24 @@
                                     <constraint firstAttribute="height" constant="129" id="Kkd-xo-EhF"/>
                                     <constraint firstAttribute="width" constant="129" id="ikb-lq-ji8"/>
                                 </constraints>
-                                <state key="normal" image="circle.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IP5-sv-2X0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tie!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSk-cg-js8">
+                                <rect key="frame" x="0.0" y="378" width="414" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUI-NG-bqb">
+                                <rect key="frame" x="159" y="544" width="105" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgainPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="clo-5s-rKc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,6 +163,8 @@
                     </view>
                     <connections>
                         <outlet property="button" destination="NI7-za-meq" id="Qjb-Q5-20z"/>
+                        <outlet property="playAgainButton" destination="tUI-NG-bqb" id="jbt-ie-XBE"/>
+                        <outlet property="resultLabel" destination="JSk-cg-js8" id="eZD-lT-2mh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -165,6 +174,5 @@
     </scenes>
     <resources>
         <image name="board.png" width="744" height="783"/>
-        <image name="circle.png" width="256" height="256"/>
     </resources>
 </document>
