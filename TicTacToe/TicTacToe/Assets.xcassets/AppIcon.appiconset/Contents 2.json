@@ -1,9 +1,8 @@
 {
   "images" : [
     {
-      "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "tictactoe app icon 2-2.png",
+      "size" : "20x20",
       "scale" : "2x"
     },
     {
@@ -34,7 +33,7 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "tictactoe app icon 2.png",
+      "filename" : "tictactoe app icon.png",
       "scale" : "2x"
     },
     {
@@ -88,9 +87,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "tictactoe app icon 2-1.png",
+      "size" : "1024x1024",
       "scale" : "1x"
     }
   ],
