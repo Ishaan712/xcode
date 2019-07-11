@@ -108,7 +108,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     // for getting the user's locations
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) { // will be called when a new location is registered by the phone
         
-        print(locations)r
+        print(locations)
         
         let userLocation:CLLocation = locations[0] // extracted the location fromt the variable: locations
         
