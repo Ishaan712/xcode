@@ -14,6 +14,7 @@
 		77F1F11B22D7D9BB00C9A125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F1F11922D7D9BB00C9A125 /* LaunchScreen.storyboard */; };
 		77F1F12622D7D9BB00C9A125 /* MapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1F12522D7D9BB00C9A125 /* MapsTests.swift */; };
 		77F1F13122D7D9BB00C9A125 /* MapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1F13022D7D9BB00C9A125 /* MapsUITests.swift */; };
+		77F1F14022D7FA1500C9A125 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F1F13F22D7FA1500C9A125 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		77F1F12C22D7D9BB00C9A125 /* MapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F1F13022D7D9BB00C9A125 /* MapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsUITests.swift; sourceTree = "<group>"; };
 		77F1F13222D7D9BB00C9A125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77F1F13F22D7FA1500C9A125 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F1F14022D7FA1500C9A125 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 				77F1F12422D7D9BB00C9A125 /* MapsTests */,
 				77F1F12F22D7D9BB00C9A125 /* MapsUITests */,
 				77F1F10E22D7D9B600C9A125 /* Products */,
+				77F1F13E22D7FA1400C9A125 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +127,14 @@
 				77F1F13222D7D9BB00C9A125 /* Info.plist */,
 			);
 			path = MapsUITests;
+			sourceTree = "<group>";
+		};
+		77F1F13E22D7FA1400C9A125 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77F1F13F22D7FA1500C9A125 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
