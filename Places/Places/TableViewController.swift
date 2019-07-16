@@ -10,6 +10,8 @@ import UIKit
 
 var places = [Dictionary<String,String>()]
 
+var activePlace = -1
+
 class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -34,7 +36,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return places.count
     }
 
     
@@ -42,9 +44,23 @@ class TableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "test"
+        DispatchQueue.main.async {
+            
+            self.tableView.reloadData()
+            
+        }
+        
+        cell.textLabel?.text = places[indexPath.row]["name"]
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        activePlace = indexPath.row
+        
+        return indexPath
+        
     }
     
 
