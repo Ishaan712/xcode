@@ -63,6 +63,16 @@ class TableViewController: UITableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "newPlace" {
+            
+            activePlace = -1
+            
+        }
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
