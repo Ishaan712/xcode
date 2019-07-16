@@ -32,6 +32,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    // when user long presses at a location on the map runs this:
     @objc func action(gestureRecongnizer:UIGestureRecognizer) {
         
         if gestureRecongnizer.state == UIGestureRecognizer.State.began {
@@ -40,33 +41,80 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             let newCoordinates:CLLocationCoordinate2D = map.convert(touchPoint, toCoordinateFrom: self.map)
             
-            let annotation = MKPointAnnotation()
+            let location = CLLocation(latitude: newCoordinates.latitude, longitude: newCoordinates.longitude)
             
-            annotation.coordinate = newCoordinates
             
-            annotation.title = "New Annotation"
+            // Get address of the locaiton using the coordinates
+            CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+                
+                var title = ""
+                
+                if (error == nil) {
+                    
+                    if let p:CLPlacemark = CLPlacemark(placemark: placemarks?[0] as! CLPlacemark) {
+                        
+                        var subThoroughfare:String = ""
+                        var thoroughfare:String = ""
+                        
+                        if p.subThoroughfare != nil {
+                            
+                            subThoroughfare = p.subThoroughfare!
+                            
+                        }
+                        
+                        if p.thoroughfare != nil {
+                            
+                            thoroughfare = p.thoroughfare!
+                            
+                        }
+                        
+                        title = "\(subThoroughfare) \(thoroughfare)"
+
+                    }
+                    
+                }
+                
+                if title == "" {
+                    
+                    title = "Added \(NSDate())"
+                    
+                }
+                
+                places.append(["name":title, "lat":"\(newCoordinates.latitude)", "lon":"\(newCoordinates.longitude)"])
+                
+                print(places.count)
+                
+                let annotation = MKPointAnnotation()
+                
+                annotation.coordinate = newCoordinates
+                
+                annotation.title = title
+                
+                self.map.addAnnotation(annotation)
+                
+            })
             
-            map.addAnnotation(annotation)
             
         }
         
     }
     
+    // to get the user's location:
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let userLocation:CLLocation = locations[0]
         
-        var latitude = userLocation.coordinate.latitude
-        var longitude = userLocation.coordinate.longitude
+        let latitude = userLocation.coordinate.latitude
+        let longitude = userLocation.coordinate.longitude
         
-        var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         let latDelta:CLLocationDegrees = 0.01
         let longDelta:CLLocationDegrees = 0.01
         
-        var span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
+        let span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
         
-        var region:MKCoordinateRegion = MKCoordinateRegion(center: coordinate, span: span)
+        let region:MKCoordinateRegion = MKCoordinateRegion(center: coordinate, span: span)
         
         self.map.setRegion(region, animated: true)
         

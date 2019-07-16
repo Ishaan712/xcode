@@ -8,16 +8,21 @@
 
 import UIKit
 
+var places = [Dictionary<String,String>()]
+
 class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        if places.count == 1 {
+            
+            places.remove(at: 0)
+            
+            places.append(["name":"Eiffel Tower", "lat": "48.858324", "lon": "2.294764"])
+            
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -29,7 +34,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 4
     }
 
     
@@ -37,7 +42,7 @@ class TableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "Test"
+        cell.textLabel?.text = "test"
 
         return cell
     }
