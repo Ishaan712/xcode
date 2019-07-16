@@ -93,8 +93,6 @@ class TableViewController: UITableViewController {
             places.remove(at: indexPath.row)
             
             UserDefaults.standard.setValue(places, forKey: "places")
-            
-            tableView.reloadData()
         }
         
     }
