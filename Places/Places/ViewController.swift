@@ -18,6 +18,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        map.mapType = MKMapType.hybrid
+        
         manager = CLLocationManager()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -103,6 +105,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 
                 places.append(["name":title, "lat":"\(newCoordinates.latitude)", "lon":"\(newCoordinates.longitude)"])
+                
+                UserDefaults.standard.setValue(places, forKey: "places")
                 
                 let annotation = MKPointAnnotation()
                 

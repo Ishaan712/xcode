@@ -17,11 +17,17 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if UserDefaults.standard.object(forKey: "places") != nil { //checks if the list is not empty
+            
+            places = UserDefaults.standard.object(forKey: "places") as! [Dictionary<String, String>]
+        }
+
+        
         if places.count == 1 {
             
             places.remove(at: 0)
             
-            places.append(["name":"Eiffel Tower", "lat": "48.858324", "lon": "2.294764"])
+            places.append(["name":"Ex. Eiffel Tower", "lat": "48.858324", "lon": "2.294764"])
             
         }
         
@@ -72,6 +78,7 @@ class TableViewController: UITableViewController {
         }
         
     }
+    
     
 
     /*

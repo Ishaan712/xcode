@@ -39,7 +39,7 @@
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="221.65178571428569"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Places-->
         <scene sceneID="bnK-bk-FWx">
             <objects>
                 <tableViewController id="9yt-zE-Qwm" customClass="TableViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                             <outlet property="delegate" destination="9yt-zE-Qwm" id="r2Y-Xf-Fy0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Sz8-t2-6nq">
+                    <navigationItem key="navigationItem" title="Places" id="Sz8-t2-6nq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EP4-W3-Rbn">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" identifier="newPlace" id="0tV-e8-8KI"/>
