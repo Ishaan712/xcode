@@ -31,6 +31,7 @@ class TableViewController: UITableViewController {
             
         }
         
+        
     }
 
     // MARK: - Table view data source
@@ -79,17 +80,21 @@ class TableViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
+            
+            tableView.deleteRows(at: [indexPath], with: .bottom)
             
             places.remove(at: indexPath.row)
             
             UserDefaults.standard.setValue(places, forKey: "places")
             
-            tableView.deleteRows(at: [indexPath], with: .bottom)
-            
-            //tableView.reloadData()
+            tableView.reloadData()
         }
         
     }
