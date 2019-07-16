@@ -79,7 +79,20 @@ class TableViewController: UITableViewController {
         
     }
     
-    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            places.remove(at: indexPath.row)
+            
+            UserDefaults.standard.setValue(places, forKey: "places")
+            
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+            
+            //tableView.reloadData()
+        }
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
