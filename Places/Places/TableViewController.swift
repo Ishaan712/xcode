@@ -19,60 +19,31 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(places.count)
+        print(places[0])
+        
         if UserDefaults.standard.object(forKey: "places") != nil { //checks if the list is not empty
             
             places = UserDefaults.standard.object(forKey: "places") as! [Dictionary<String, String>]
         }
-
-        
-        if places.count == 1 && didLoad == false {
-            
-            places.remove(at: 0)
-            
-            places.append(["name":"Ex. Eiffel Tower", "lat": "48.858324", "lon": "2.294764"])
-            
-            didLoad = true
-            
-        }
-        
-        tableView.reloadData()
         
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return places.count
-    }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func viewDidAppear(_ animated: Bool) {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        DispatchQueue.main.async {
+        if places.count == 1 && didLoad == false {
             
-            self.tableView.reloadData()
+            didLoad = true
             
+            places.remove(at: 0)
+            
+            places.append(["name":"Ex. Eiffel Tower", "lat": "48.858324", "lon": "2.294764"])
+
         }
         
-        cell.textLabel?.text = places[indexPath.row]["name"]
-
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        
-        activePlace = indexPath.row
-        
-        return indexPath
-        
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -101,10 +72,39 @@ class TableViewController: UITableViewController {
             
             UserDefaults.standard.setValue(places, forKey: "places")
             
-            self.tableView.reloadData()
         }
         
     }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        activePlace = indexPath.row
+        
+        return indexPath
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return places.count
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = places[indexPath.row]["name"]
+        
+        return cell
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

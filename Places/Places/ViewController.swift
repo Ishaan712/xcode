@@ -106,7 +106,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 
                 places.append(["name":title, "lat":"\(newCoordinates.latitude)", "lon":"\(newCoordinates.longitude)"])
                 
-                
                 UserDefaults.standard.setValue(places, forKey: "places")
                 
                 let annotation = MKPointAnnotation()
