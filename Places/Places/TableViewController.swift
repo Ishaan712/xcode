@@ -12,6 +12,8 @@ var places = [Dictionary<String,String>()]
 
 var activePlace = -1
 
+var didLoad = false
+
 class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -23,14 +25,17 @@ class TableViewController: UITableViewController {
         }
 
         
-        if places.count == 1 {
+        if places.count == 1 && didLoad == false {
             
             places.remove(at: 0)
             
             places.append(["name":"Ex. Eiffel Tower", "lat": "48.858324", "lon": "2.294764"])
             
+            didLoad = true
+            
         }
         
+        tableView.reloadData()
         
     }
 
@@ -90,11 +95,13 @@ class TableViewController: UITableViewController {
         
         if editingStyle == .delete {
             
-            tableView.deleteRows(at: [indexPath], with: .bottom)
-            
             places.remove(at: indexPath.row)
             
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+            
             UserDefaults.standard.setValue(places, forKey: "places")
+            
+            self.tableView.reloadData()
         }
         
     }
