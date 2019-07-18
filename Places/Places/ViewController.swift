@@ -20,6 +20,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // create a manager to request location and determine the accuracy of the location
         manager = CLLocationManager()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -48,7 +50,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
         }
         
-        let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(action))
+        let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(action)) // long press gesture
         
         uilpgr.minimumPressDuration = 2
         
@@ -56,9 +58,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    @IBAction func segmentTapped(_ sender: Any) {
+    @IBAction func segmentTapped(_ sender: Any) { // change the type of map depending on the switch
         
-        let getIndex = segment.selectedSegmentIndex
+        let getIndex = segment.selectedSegmentIndex // which segment is selected
         
         if getIndex == 0 {
             
@@ -76,20 +78,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    // when user long presses at a location on the map runs this:
-    @objc func action(gestureRecongnizer:UIGestureRecognizer) {
+    
+    @objc func action(gestureRecongnizer:UIGestureRecognizer) { // when user long presses at a location on the map runs this
         
         if gestureRecongnizer.state == UIGestureRecognizer.State.began {
         
             let touchPoint = gestureRecongnizer.location(in: self.map)
             
-            let newCoordinates:CLLocationCoordinate2D = map.convert(touchPoint, toCoordinateFrom: self.map)
+            let newCoordinates:CLLocationCoordinate2D = map.convert(touchPoint, toCoordinateFrom: self.map) // converts points on map to actual coordinates
             
             let location = CLLocation(latitude: newCoordinates.latitude, longitude: newCoordinates.longitude)
             
             
-            // Get address of the locaiton using the coordinates
-            CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in // Get address of the locaiton using the coordinates
                 
                 var title = ""
                 
@@ -118,15 +120,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     
                 }
                 
-                if title == "" {
+                if title == "" || title == " " { // if no address available
                     
                     title = "Added \(NSDate())"
                     
                 }
                 
-                places.append(["name":title, "lat":"\(newCoordinates.latitude)", "lon":"\(newCoordinates.longitude)"])
+                places.append(["name":title, "lat":"\(newCoordinates.latitude)", "lon":"\(newCoordinates.longitude)"]) // add the location to the dictionary
                 
-                UserDefaults.standard.setValue(places, forKey: "places")
+                UserDefaults.standard.setValue(places, forKey: "places") // store it permanently
                 
                 let annotation = MKPointAnnotation()
                 
@@ -134,7 +136,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 
                 annotation.title = title
                 
-                self.map.addAnnotation(annotation)
+                self.map.addAnnotation(annotation) // add the address under the pin on the map
                 
             })
             
@@ -143,8 +145,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    // to get the user's location:
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) { // to get the user's location and center on it:
         
         let userLocation:CLLocation = locations[0]
         
