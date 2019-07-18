@@ -15,10 +15,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var map: MKMapView!
     
+    @IBOutlet weak var segment: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        map.mapType = MKMapType.hybrid
         
         manager = CLLocationManager()
         manager.delegate = self
@@ -53,6 +53,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         uilpgr.minimumPressDuration = 2
         
         map.addGestureRecognizer(uilpgr)
+        
+    }
+    
+    @IBAction func segmentTapped(_ sender: Any) {
+        
+        let getIndex = segment.selectedSegmentIndex
+        
+        if getIndex == 0 {
+            
+            map.mapType = MKMapType.standard
+        
+        } else if getIndex == 1{
+            
+            map.mapType = MKMapType.hybrid
+            
+        } else if getIndex == 2 {
+            
+            map.mapType = MKMapType.satellite
+            
+        }
         
     }
     
