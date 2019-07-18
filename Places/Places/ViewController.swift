@@ -60,7 +60,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func segmentTapped(_ sender: Any) { // change the type of map depending on the switch
         
-        let getIndex = segment.selectedSegmentIndex
+        let getIndex = segment.selectedSegmentIndex // which segment is selected
         
         if getIndex == 0 {
             
