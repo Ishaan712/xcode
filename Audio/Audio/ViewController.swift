@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         var audioPath = Bundle.main.path(forResource: "lucidDreams", ofType: "mp3")!
         
         var error : NSError? = nil
-        
         player = try! AVAudioPlayer(contentsOf: NSURL(string: audioPath)! as URL)
         
         if error == nil {
@@ -44,12 +43,15 @@ class ViewController: UIViewController {
     @IBAction func sliderChanged(_ sender: Any) { // volume change
         
         player.volume = sliderValue.value // 0-1 both of them
+        print(sliderValue)
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
     }
 
 
