@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     @IBAction func play(_ sender: Any) { // play audio
         
-        var audioPath = Bundle.main.path(forResource: "beethoven-2-1-1-pfaul", ofType: "mp3")!
+        var audioPath = Bundle.main.path(forResource: "lucidDreams", ofType: "mp3")!
         
         var error : NSError? = nil
         

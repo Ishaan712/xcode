@@ -15,6 +15,7 @@
 		772C5F3222E13E4100C83E29 /* AudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C5F3122E13E4100C83E29 /* AudioTests.swift */; };
 		772C5F3D22E13E4100C83E29 /* AudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C5F3C22E13E4100C83E29 /* AudioUITests.swift */; };
 		772C5F4B22E13E5B00C83E29 /* beethoven-2-1-1-pfaul.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 772C5F4A22E13E5B00C83E29 /* beethoven-2-1-1-pfaul.mp3 */; };
+		772C5F4D22E15E6F00C83E29 /* lucidDreams.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 772C5F4C22E15E6F00C83E29 /* lucidDreams.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		772C5F3C22E13E4100C83E29 /* AudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUITests.swift; sourceTree = "<group>"; };
 		772C5F3E22E13E4100C83E29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772C5F4A22E13E5B00C83E29 /* beethoven-2-1-1-pfaul.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beethoven-2-1-1-pfaul.mp3"; sourceTree = "<group>"; };
+		772C5F4C22E15E6F00C83E29 /* lucidDreams.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lucidDreams.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				772C5F1C22E13E3E00C83E29 /* AppDelegate.swift */,
 				772C5F1E22E13E3E00C83E29 /* ViewController.swift */,
 				772C5F2022E13E3E00C83E29 /* Main.storyboard */,
+				772C5F4C22E15E6F00C83E29 /* lucidDreams.mp3 */,
 				772C5F4A22E13E5B00C83E29 /* beethoven-2-1-1-pfaul.mp3 */,
 				772C5F2322E13E4100C83E29 /* Assets.xcassets */,
 				772C5F2522E13E4100C83E29 /* LaunchScreen.storyboard */,
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				772C5F4D22E15E6F00C83E29 /* lucidDreams.mp3 in Resources */,
 				772C5F2722E13E4100C83E29 /* LaunchScreen.storyboard in Resources */,
 				772C5F2422E13E4100C83E29 /* Assets.xcassets in Resources */,
 				772C5F2222E13E3E00C83E29 /* Main.storyboard in Resources */,
