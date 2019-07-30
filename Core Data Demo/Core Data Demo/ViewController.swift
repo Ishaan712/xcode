@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,32 +27,53 @@ class ViewController: UIViewController {
         newUser.setValue("Ishaan", forKey: "username")
         newUser.setValue("hello123", forKey: "password")
         
-        do {
-           try context.save()
-          } catch {
-           print("Failed saving")
-        }
+                do {
+                   try context.save()
+                  } catch {
+                   print("Failed saving")
+                }
         
         
         //fetch data from the database
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
         request.returnsObjectsAsFaults = false
         do {
+            
             let result = try context.fetch(request)
             
             if result.count > 0 {
                 
-                print(result.count)
+                //print(result.count)
                 
                 for item: AnyObject in result as! [NSManagedObject] {
                     
-                    print(item.value(forKey: "password")!) // to access a specific item in the database
-                    
+                    if let user = (item as AnyObject).value(forKey: "username") as? String { // show specfic value in database
+                        
+                        if user == "Rob" {
+                            
+                            context.delete(item as! NSManagedObject)
+                            
+                            print(user + " has been deleted!")
+                            
+                            do {
+                                try context.save()
+                            } catch {
+                                print("Failed saving")
+                            }
+                            
+                        } else {
+                            
+                            print(item.value(forKey: "username")!)
+                            
+                        }
+                        
+                    }
+            
                 }
                 
             } else {
                 
-                print("No reuslts!")
+                print("No results!")
                 
             }
             
@@ -61,7 +82,7 @@ class ViewController: UIViewController {
         }
         
     }
-
-
+    
+    
 }
 
