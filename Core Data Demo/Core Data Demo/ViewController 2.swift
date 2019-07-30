@@ -21,12 +21,12 @@ class ViewController: UIViewController {
         let context:NSManagedObjectContext = appDel.persistentContainer.viewContext // set up context to work with the database
         
         
-        // make a new user in the database
-//        let newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context) as NSManagedObject
-//
-//        newUser.setValue("Praseeda", forKey: "username")
-//        newUser.setValue("password123", forKey: "password")
-//
+        // make a new user in the database: 
+        //var newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context) as NSManagedObject
+        
+        //newUser.setValue("Ishaan", forKey: "username")
+        //newUser.setValue("hello123", forKey: "password")
+        
 //        do {
 //            try context.save()
 //        } catch {
@@ -37,36 +37,33 @@ class ViewController: UIViewController {
         //fetch data from the database
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
         request.returnsObjectsAsFaults = false
-        
-        // predicate = search criteria
-        request.predicate = NSPredicate(format: "username = %@", "Siya") // tests if the username is equal to something // request a particular item
-            
         do {
             
             let result = try context.fetch(request)
             
             if result.count > 0 {
                 
-                print(result)
+                //print(result.count)
                 
                 for item: AnyObject in result as! [NSManagedObject] {
                     
                     if let user = (item as AnyObject).value(forKey: "username") as? String { // show specfic value in database
                         
-                        if user == "Siya" { // checks if the item is a specific user
+                        if user == "hello" {
                             
-//                            context.delete(item as! NSManagedObject) // delete item in the result
-//
-//                            print(user + " has been deleted!")
+                            context.delete(item as! NSManagedObject) // delete item in the result
                             
-                            // update information for that user
-                            item.setValue("something123", forKey: "password")
+                            print(user + " has been deleted!")
                             
                             do {
                                 try context.save() // save the data in the database
                             } catch {
                                 print("Failed saving")
                             }
+                            
+                        } else {
+                            
+                            print(item.value(forKey: "username")!)
                             
                         }
                         
