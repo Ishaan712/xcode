@@ -22,16 +22,16 @@ class ViewController: UIViewController {
         
         
         // make a new user in the database
-        var newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context) as NSManagedObject
+        //var newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context) as NSManagedObject
         
-        newUser.setValue("Ishaan", forKey: "username")
-        newUser.setValue("hello123", forKey: "password")
+        //newUser.setValue("Ishaan", forKey: "username")
+        //newUser.setValue("hello123", forKey: "password")
         
-                do {
-                   try context.save()
-                  } catch {
-                   print("Failed saving")
-                }
+//        do {
+//            try context.save()
+//        } catch {
+//            print("Failed saving")
+//        }
         
         
         //fetch data from the database
@@ -49,14 +49,14 @@ class ViewController: UIViewController {
                     
                     if let user = (item as AnyObject).value(forKey: "username") as? String { // show specfic value in database
                         
-                        if user == "Rob" {
+                        if user == "hello" {
                             
-                            context.delete(item as! NSManagedObject)
+                            context.delete(item as! NSManagedObject) // delete item in the result
                             
                             print(user + " has been deleted!")
                             
                             do {
-                                try context.save()
+                                try context.save() // save the data in the database
                             } catch {
                                 print("Failed saving")
                             }
