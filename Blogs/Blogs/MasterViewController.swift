@@ -9,13 +9,15 @@
 import UIKit
 import CoreData
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                
+        let context:NSManagedObjectContext = appDel.persistentContainer.viewContext
         
         let url = NSURL(string: "https://www.googleapis.com/blogger/v3/blogs/10861780/posts?key=AIzaSyBavZRVigpFblBI_nYaaPuVpv5N_nQQhlw")
         
@@ -41,20 +43,53 @@ class MasterViewController: UITableViewController {
                         
                         if let items = jsonResult["items"] as? NSArray {
                             
-                            for item in (items as? [[String:Any]])! {
+                            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Posts")
+                            
+                            fetchRequest.returnsObjectsAsFaults = false
+                            
+                            do {
                                 
-                                //print(item)
+                                var results = try context.fetch(fetchRequest)
                                 
+                                if results.count > 0 {
                                 
-                                if let title = item["title"] as? String {
-                                    
-                                    print(title)
-                                    
+                                    for result in results {
+                                        
+                                        context.delete(result as! NSManagedObject)
+                                        
+                                        do {
+                                            try context.save()
+                                        } catch {
+                                            print("Failed saving")
+                                        }
+                                        
+                                    }
                                 }
                                 
-                                if let content = item["content"] as? String  {
+                            } catch {
+                                
+                                print("error")
+                                
+                            }
+                            
+                            for item in (items as? [[String:Any]])! {
+                            
+                                if let title = item["title"] as? String {
                                     
-                                    print(content)
+                                    if let content = item["content"] as? String  {
+                                        
+                                        let newPost:NSManagedObject = NSEntityDescription.insertNewObject(forEntityName: "Posts", into: context)
+                                        
+                                        newPost.setValue(title, forKey: "title")
+                                        newPost.setValue(content, forKey: "content")
+                                        
+                                        do {
+                                            try context.save()
+                                        } catch {
+                                            print("Failed saving")
+                                        }
+                                        
+                                    }
                                     
                                 }
                                 
@@ -63,6 +98,8 @@ class MasterViewController: UITableViewController {
                         }
                         
                     }
+                    
+                    self.tableView.reloadData()
                     
                 } catch {
                     
