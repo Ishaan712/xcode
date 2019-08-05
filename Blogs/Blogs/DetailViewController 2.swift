@@ -11,8 +11,19 @@ import UIKit
 class DetailViewController: UIViewController {
 
 
+    @IBOutlet var webView: UIWebView!
+    
     func configureView() {
         // Update the user interface for the detail item.
+        
+        if let detail = detailItem {
+            
+            if let wv = webView {
+                
+                wv.loadHTMLString(detail.content!.description, baseURL: nil)
+
+            }
+        }
         
     }
 

@@ -125,7 +125,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             
-            print("Show Detail")
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let object = fetchedResultsController.object(at: indexPath)
+                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                controller.detailItem = object
+            }
             
         }
     }
