@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		776551562318CE9E005B3AA6 /* tictactoeboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 776551552318CE9E005B3AA6 /* tictactoeboard.png */; };
 		778C44C522CDB36B00809057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778C44C422CDB36B00809057 /* AppDelegate.swift */; };
 		778C44C722CDB36B00809057 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778C44C622CDB36B00809057 /* ViewController.swift */; };
 		778C44CA22CDB36B00809057 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778C44C822CDB36B00809057 /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		778C44E522CDB36E00809057 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778C44E422CDB36E00809057 /* TicTacToeUITests.swift */; };
 		778C44F522CDB50A00809057 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 778C44F222CDB50A00809057 /* cross.png */; };
 		778C44F722CDB50A00809057 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 778C44F422CDB50A00809057 /* circle.png */; };
-		778C44F922CDB5A000809057 /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = 778C44F822CDB59A00809057 /* board.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		776551552318CE9E005B3AA6 /* tictactoeboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tictactoeboard.png; sourceTree = "<group>"; };
 		778C44C122CDB36B00809057 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		778C44C422CDB36B00809057 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		778C44C622CDB36B00809057 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		778C44E622CDB36E00809057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		778C44F222CDB50A00809057 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		778C44F422CDB50A00809057 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
-		778C44F822CDB59A00809057 /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = " <group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 				778C44C422CDB36B00809057 /* AppDelegate.swift */,
 				778C44C622CDB36B00809057 /* ViewController.swift */,
 				778C44C822CDB36B00809057 /* Main.storyboard */,
-				778C44F822CDB59A00809057 /* board.png */,
+				776551552318CE9E005B3AA6 /* tictactoeboard.png */,
 				778C44F422CDB50A00809057 /* circle.png */,
 				778C44F222CDB50A00809057 /* cross.png */,
 				778C44CB22CDB36E00809057 /* Assets.xcassets */,
@@ -238,12 +238,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				778C44F922CDB5A000809057 /* board.png in Resources */,
 				778C44CF22CDB36E00809057 /* LaunchScreen.storyboard in Resources */,
 				778C44CC22CDB36E00809057 /* Assets.xcassets in Resources */,
 				778C44F522CDB50A00809057 /* cross.png in Resources */,
 				778C44F722CDB50A00809057 /* circle.png in Resources */,
 				778C44CA22CDB36B00809057 /* Main.storyboard in Resources */,
+				776551562318CE9E005B3AA6 /* tictactoeboard.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
