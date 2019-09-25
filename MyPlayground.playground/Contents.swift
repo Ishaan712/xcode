@@ -14,6 +14,7 @@ fullName = "John " + name
 var unkownString:String
 unkownString = "3"
 
+   //Work with Integers//
 var int = 16
 int*3
 
@@ -28,10 +29,10 @@ var c = 5/2
 var d:Double = 5/2
 d*Double(c)
 
-var remainder  = 9%2
+var remainder  = 9%2 // remainder
 
-var longSentence = str + " " + name
-var newString  = "I am \(int) years old"
+var longSentence = str + " " + name //concatenation
+var newString  = "I am \(int) years old" //put variable in middle of string
 
 
 ////arrays and dictionaries
