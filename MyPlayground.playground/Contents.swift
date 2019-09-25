@@ -1,6 +1,9 @@
 import UIKit
 
 //strings and integers
+
+print("Hello world")
+
 var str = "Hello, playground"
 
 str = "Goodbye"
@@ -65,23 +68,23 @@ var newString  = "I am \(int) years old" //put variable in middle of string
 //var sentence = "My name is \(String(describing: dict[newName]!))"
 //
 //
-////If Statements
-//var myName = "John"
-//var time = 15
-//
-//if myName == "Jim" && time < 12 {
-//    print("Good morning Jim")
-//} else if myName == "Jim" && time > 12 {
-//    print("Good afternoon Jim")
-//}else {
-//    print("Who are you?")
-//}
-//
-//if myName == "Jim" || time < 20 {
-//    print("One statement is true")
-//}
-//
-//
+//If Statements
+var myName = "John"
+var time = 15
+
+if myName == "Jim" && time < 12 {
+    print("Good morning Jim")
+} else if myName == "Jim" && time > 12 {
+    print("Good afternoon Jim")
+}else {
+    print("Who are you?")
+}
+
+if myName == "Jim" || time < 20 {
+    print("One statement is true")
+}
+
+
 ////Random Number if needed
 //var randomNumber = arc4random_uniform(6) //between 0 and 5
 //
