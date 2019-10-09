@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var age: UITextField!
+    
+    @IBOutlet weak var age: UITextField!
     
     @IBOutlet var resultLabel: UILabel!
     
