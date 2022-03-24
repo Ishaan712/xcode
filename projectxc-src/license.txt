@@ -1,0 +1,21 @@
+ProjectXC
+Copyright (C) Phil Hess.
+
+
+Compilable files of source code that are linked into a binary executable or 
+library have generally been licensed the same as Free Pascal's RTL, with a 
+"modified LGPL" license, as indicated in source comments. See Free Pascal's 
+rtl/COPYING.FPC.
+
+The empty Xcode projects under "templates" are the basis for new projects
+created by the ProjectXC tools. You are free to use the new projects created 
+however you want.
+
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

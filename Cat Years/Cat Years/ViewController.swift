@@ -2,36 +2,43 @@
 //  ViewController.swift
 //  Cat Years
 //
-//  Created by Ishaan Sathaye on 6/25/19.
-//  Copyright © 2019 NextGenTech. All rights reserved.
+//  Created by Ishaan on 7/6/16.
+//  Copyright © 2016 Ishaan. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func myButton(sender: AnyObject) {
+    
+        var enteredAge = Int(age.text!)
+        
+        if enteredAge != nil {
+        
+            var catYears = enteredAge! * 7
+        
+            resultLabel.text = "Your cat is " + String(catYears) + " in cat years "
+        
+        } else {
+            
+            resultLabel.text = "Please enter a number"
+        }
+    }
+    
     
     @IBOutlet weak var age: UITextField!
     
-    @IBOutlet var resultLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
     
-    @IBAction func myButton(_ sender: Any) {
-        
-        let enteredAge:Int? = Int(age.text!)
-        
-        if enteredAge != nil {
-            let catYears = enteredAge! * 7
-            
-            resultLabel.text = "Your cat is \(catYears) in cat years"
-        }
-        else {
-            resultLabel.text = "Enter cat's age!"
-        }
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
 
